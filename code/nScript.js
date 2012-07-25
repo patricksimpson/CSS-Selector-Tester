@@ -8,10 +8,15 @@ var nd___vo = {
   add: function () {
     $("body").append("<div id='nd___box'><span id='nd___close'>[x]</span><span id='nd___title'>CSS Selector Test</span><form onsumbut='return false;'><p><label>Selector:</label><input type='text' id='nd___selector'><a href='javascript: void(0);' id='nd___clean'>X</a></p><p>Element: <span id='nd___status'>undefined</span></p><p><input type='checkbox' id='nd___ohighlight' checked='true'><label for='nd___ohighlight'>Highlight</label>&nbsp;<input type='checkbox' id='nd___oautoclean'><label for='nd___oautoclean'>Autoclean</label></p></form></div>");
     $("#nd___selector").keyup(function(){
-      var q = $("#nd___selector").val();
-      var e = $("*:not(div#nd___box " + q + ")" + q);
       nd___vo.clean();
-      console.log(e[0]);	
+      var q = $("#nd___selector").val();
+      try{
+        var e = $("*:not(div#nd___box " + q + ")" + q);
+      }
+      catch (err){
+        if(err) return false;
+      }
+      
       if(e[0]){
         if($(e)[0].tagName.toUpperCase() === "HTML"){ e = false; return false;}
         nd___vo.alert(nd___vo.info(e));
