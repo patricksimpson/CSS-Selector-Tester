@@ -1,0 +1,24 @@
+{
+  "name": "CSS Selector Test",
+  "version": "1.0",
+  "manifest_version": 1,
+  "description": "Test your css selector by using this quick script. Does not support the HTML Element or *.",
+  "browser_action": {
+    "default_icon": "icon_css_test.png"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+    "content_scripts": [
+    {
+      "matches": ["http://*/*","https://*/*"],
+      "css": ["nStyles.css"]
+    }
+  ],
+  "permissions": [
+    "https://*/*",
+    "http://*/*",
+    "tabs"
+  ]
+}
+

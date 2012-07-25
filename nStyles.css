@@ -1,0 +1,61 @@
+#nd___box {
+  background-color: #eee;
+  border: #777 1px solid;
+  padding: 10px;
+  position: absolute;
+  top:0px;
+  left: 0px;
+  font-family: arial;
+  font-size: 12px;
+  text-align: left;
+  z-index: 9999999999999999999999;
+}
+#nd___box form{
+  display: block;
+  margin-top: 0em;
+  background-color: transparent;
+}
+#nd___box p{
+  display: block;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  background-color: transparent;
+}
+#nd___box  input:not([type]), 
+#nd___box input[type="color"],
+#nd___box  input[type="date"],
+#nd___box input[type="datetime"],
+#nd___box input[type="datetime-local"],
+#nd___box input[type="email"],
+#nd___box input[type="month"],
+#nd___box input[type="number"],
+#nd___box input[type="password"],
+#nd___box input[type="tel"],
+#nd___box input[type="text"],
+#nd___box input[type="time"],
+#nd___box input[type="url"],
+#nd___box input[type="week"] {
+padding: 1px 0px;
+}
+#nd___box input[type="checkbox"] {
+margin: 3px 3px 3px 4px;
+}
+#nd___box label {
+cursor: default;
+}
+#nd___status{
+  font-weight: bold;
+}
+#nd___close{
+float: right;
+cursor: pointer;
+}
+#nd___title{
+  font-weight: bold;
+  font-size: 1.1em;
+}
+.nd___highlight{
+
+}
