@@ -6,15 +6,13 @@ var nd___vo = {
   },
   show: function () {
     $("#nd___box").show();
-    if($("#nd___ohighlight").attr("checked") === "checked"){
-      var q =  $.trim($("#nd___selector").val());
-      if(!q){
-        q = $("#nd___cache").text();
-        $("#nd___selector").val(q);
-      }
-      if(q){
-        nd___vo.go();
-      }
+    var q =  $.trim($("#nd___selector").val());
+    if(!q){
+      q = $("#nd___cache").text();
+      $("#nd___selector").val(q);
+    }
+    if(q){
+      nd___vo.go();
     }
   },
   add: function() {
@@ -35,7 +33,7 @@ var nd___vo = {
       if($("#nd___ohighlight").attr("checked") !== "checked"){
         nd___vo.clean();
       }else{
-        if(nd___vo.cachE){
+        if(nd___vo.cacheE){
           $(nd___vo.cacheE).css("outline","2px dashed #cc0000");
         }
       }
@@ -53,9 +51,9 @@ var nd___vo = {
     if(e[0]){
       if($(e)[0].tagName.toUpperCase() === "HTML"){ e = false; return false;}
       nd___vo.alert(nd___vo.info(e));
+      nd___vo.cacheB = $(e).css("outline");
+      nd___vo.cacheE = e;
       if($("#nd___ohighlight").attr("checked") === "checked"){
-        nd___vo.cacheB = $(e).css("outline");
-        nd___vo.cacheE = e;
         $(e).css("outline","2px dashed #cc0000");
       }
       if(($("#nd___oautoclean").attr("checked") === "checked")){
