@@ -5,17 +5,16 @@ var nd___vo = {
   },
   cacheB: null,
   cacheE: null,
-  add: function () {
-    $("body").append("<div id='nd___box'><span id='nd___close'>[x]</span><span id='nd___title'>CSS Selector Test</span><form onsumbut='return false;'><p><label>Selector:</label><input type='text' id='nd___selector'><a href='javascript: void(0);' id='nd___clean'>X</a></p><p>Element: <span id='nd___status'>undefined</span></p><p><input type='checkbox' id='nd___ohighlight' checked='true'><label for='nd___ohighlight'>Highlight</label>&nbsp;<input type='checkbox' id='nd___oautoclean'><label for='nd___oautoclean'>Autoclean</label></p></form></div>");
+  add: function() {
+    $("body").append("<div id='nd___box'><span id='nd___close'>[x]</span><span id='nd___title'>CSS Selector Tester</span><form onsumbut='return false;'><p><label>Selector:</label><input type='text' id='nd___selector'><a href='javascript: void(0);' id='nd___clean'>X</a></p><p>Element: <span id='nd___status'>undefined</span></p><p><input type='checkbox' id='nd___ohighlight' checked='true'><label for='nd___ohighlight'>Highlight</label>&nbsp;<input type='checkbox' id='nd___oautoclean'><label for='nd___oautoclean'>Autoclean</label></p></form></div>");
     $("#nd___selector").keyup(function(){
       nd___vo.clean();
-      var q = $("#nd___selector").val();
-      try{
-        var e = $("*:not(div#nd___box " + q + ")" + q);
+      var q, e;
+      q = $.trim($("#nd___selector").val());
+      if(q === "#" || q === "."){
+        return false;
       }
-      catch (err){
-        if(err) return false;
-      }
+      e = $("*:not(div#nd___box " + q + ")" + q);
       
       if(e[0]){
         if($(e)[0].tagName.toUpperCase() === "HTML"){ e = false; return false;}
@@ -37,6 +36,15 @@ var nd___vo = {
       nd___vo.alert("undefined"); nd___vo.clean(); $("#nd___selector").val("");
     });
     $("#nd___close").click(function(){nd___vo.alert("undefined"); nd___vo.remove();$("#nd___selector").val("");});
+    $("#nd___ohighlight").click(function(){
+      if($("#nd___ohighlight").attr("checked") !== "checked"){
+        nd___vo.clean();
+      }else{
+        if(nd___vo.cachE){
+          $(nd___vo.cacheE).css("outline","2px dashed #cc0000");
+        }
+      }
+    });
   },
   alert: function(msg){
     $("#nd___status").html(msg);
@@ -63,7 +71,7 @@ var nd___vo = {
     }
     return sel;
   }
-}
+};
 if($("#nd___box")[0]){ 
   nd___vo.remove();
 }else{

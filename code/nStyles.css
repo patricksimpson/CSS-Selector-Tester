@@ -2,13 +2,17 @@
   background-color: #eee;
   border: #777 1px solid;
   padding: 10px;
-  position: absolute;
+  position: fixed;
   top:0px;
   left: 0px;
   font-family: arial;
   font-size: 12px;
   text-align: left;
   z-index: 9999999999999999999999;
+  width: 300px;
+}
+#nd___selector{
+width: 250px;
 }
 #nd___box form{
   display: block;
