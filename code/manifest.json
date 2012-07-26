@@ -1,8 +1,8 @@
 {
-  "name": "CSS Selector Test",
-  "version": "1.0",
-  "manifest_version": 1,
-  "description": "Test your css selector by using this quick script. Does not support the HTML Element or *.",
+  "name": "CSS Selector Tester",
+  "version": "1.1",
+  "manifest_version": 3,
+  "description": "Test your css selector by using this quick script. Does not support the \"HTML\" Element or \"*\" selector.",
   "browser_action": {
     "default_icon": "icon_css_test.png"
   },

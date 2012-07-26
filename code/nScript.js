@@ -1,7 +1,17 @@
 var nd___vo = {
   remove: function () {
     nd___vo.clean();
-    $("#nd___box").remove();
+    $("#nd___box").hide();
+  },
+  show: function () {
+    $("#nd___box").show();
+    if($("#nd___ohighlight").attr("checked") !== "checked"){
+      nd___vo.clean();
+    }else{
+      if(nd___vo.cachE){
+        $(nd___vo.cacheE).css("outline","2px dashed #cc0000");
+      }
+    }
   },
   cacheB: null,
   cacheE: null,
@@ -73,7 +83,7 @@ var nd___vo = {
   }
 };
 if($("#nd___box")[0]){ 
-  nd___vo.remove();
+  nd___vo.show();
 }else{
   nd___vo.add();
 }
