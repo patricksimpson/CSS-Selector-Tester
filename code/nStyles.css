@@ -1,31 +1,31 @@
 #nd___box {
-  background-color: #eee;
-  border: #777 1px solid;
-  padding: 10px;
-  position: fixed;
+  background-color: #eee !important;
+  border: #777 1px solid !important;
+  padding: 10px !important;
+  position: absolute;
   top:0px;
   left: 0px;
-  font-family: arial;
-  font-size: 12px;
-  text-align: left;
-  z-index: 9999999999999999999999;
-  color: #000;
+  font-family: arial !important;
+  font-size: 12px !important;
+  text-align: left !important;
+  z-index: 9999999999999999999999 !important;
+  color: #000 !important;
 }
 #nd___selector{
-width: 200px;
+width: 200px !important;
 }
 #nd___box form{
-  display: block;
-  margin-top: 0em;
-  background-color: transparent;
+  display: block !important;
+  margin-top: 0em !important;
+  background-color: transparent !important;
 }
 #nd___box p{
-  display: block;
-  -webkit-margin-before: 1em;
-  -webkit-margin-after: 1em;
-  -webkit-margin-start: 0px;
-  -webkit-margin-end: 0px;
-  background-color: transparent;
+  display: block !important;
+  -webkit-margin-before: 1em !important;
+  -webkit-margin-after: 1em !important;
+  -webkit-margin-start: 0px !important;
+  -webkit-margin-end: 0px !important;
+  background-color: transparent !important;
 }
 #nd___box  input:not([type]), 
 #nd___box input[type="color"],
@@ -43,8 +43,14 @@ width: 200px;
 #nd___box input[type="week"] {
 padding: 1px 0px;
 }
+#nd___highlighted {
+  outline-color: #CC0000 !important;
+  outline-width: 2px !important;
+  outline-style: dashed !important;
+}
 #nd___box input[type="checkbox"] {
-margin: 3px 3px 3px 4px;
+margin: 3px 3px 3px 4px !important;
+;
 }
 #nd___box .ui-icon {
 width: 16px;
@@ -63,6 +69,6 @@ float: right;
 cursor: pointer;
 }
 #nd___title{
-  font-weight: bold;
-  font-size: 1.1em;
+  font-weight: bold !important;
+  font-size: 1.1em !important;
 }
