@@ -10,8 +10,7 @@
       "matches": [ "http://*/*", "https://*/*" ]
    } ],
    "description": "Test your css selector by using this quick script. Does not support the \"HTML\" Element or \"*\" selector.",
-   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDGIwkCZqer4co6vvAigiv6P3srvnePB71qDA8IqwE6PgO+HGIqKMrgU2Ri21fN2t5o9CMCaN9+DMDb+K6Tr3N3oV/ramutrAtVWcRsekR0lbhpnxW3oiKMIWjQ1scQ7Qqz73vPsdPhDP5g+JSVCNtbYoeUshXGc7e86etcv0pqjQIDAQAB",
-   "manifest_version": 4,
+   "manifest_version": 2,
    "name": "CSS Selector Tester",
    "permissions": [ "https://*/*", "http://*/*", "tabs" ],
    "update_url": "http://clients2.google.com/service/update2/crx",
