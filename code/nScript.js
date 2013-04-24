@@ -16,8 +16,13 @@ var nd___vo = {
     }
   },
   add: function() {
-    $("body").append("<div id='nd___box'><span id='nd___close'>[X]</span><span id='nd___title'>CSS Selector Tester</span><form onsumbut='return false;'><p><label>Selector:</label><input type='text' id='nd___selector'> <a href='javascript: void(0);' id='nd___clean'>clear</a></p><p>Element: <span id='nd___status'>undefined</span></p><p><input type='checkbox' id='nd___ohighlight' checked='true'><label for='nd___ohighlight'>Highlight</label>&nbsp;<input type='checkbox' id='nd___oautoclean'><label for='nd___oautoclean'>Autoclean</label></p></form></div>");
-    $("body").append("<div id='nd___cache' style='display:none;'></div>");
+    $("body").append("<div id='nd___box'></div>");
+    $("#nd___box").append("<span id='nd___close'>[X]</span><span id='nd___title'>CSS Selector Tester</span>");
+    $("#nd___box").append("<form action='#' id='nd___form'></form>");
+    $("#nd___form").append("<p><label>Selector:</label><input type='text' id='nd___selector' /> <a href='javascript: void(0);' id='nd___clean'>clear</a></p>");
+    $("#nd___form").append("<p>Element: <span id='nd___status'>undefined</span></p>");
+    $("#nd___form").append("<p><input type='checkbox' id='nd___ohighlight' checked='true' /><label for='nd___ohighlight'>Highlight</label> <input type='checkbox' id='nd___oautoclean' /><label for='nd___oautoclean'>Autoclean</label></p>");
+    $("#nd___form").on("submit", function(){ return false; });
     $("#nd___selector").keyup(function(){nd___vo.go();});
     $("#nd___box").draggable({ opacity: 0.35 }).resizable({ minWidth: 235 , minHeight: 120});
     $("#nd___clean").click(function(){
@@ -35,7 +40,10 @@ var nd___vo = {
         nd___vo.clean();
       }else{
         if(nd___vo.cacheE){
-          $(nd___vo.cacheE).css("outline","2px dashed #cc0000");
+          $(nd___vo.cacheE).css("outlineColor", "RGB(204,0,0)");
+          $(nd___vo.cacheE).css("outlineStyle", "dashed");
+          $(nd___vo.cacheE).css("outlineWidth", "2px");
+          $(e).addClass("nd___highlighted");
         }
       }
     });
@@ -62,13 +70,19 @@ var nd___vo = {
             return true;
       });
       if(e.length < 1){return false;}
-      nd___vo.cacheB = $(e).css("outline");
+      nd___vo.cacheOC = $(e).css("outlineColor");
+      nd___vo.cacheOS = $(e).css("outlineStyle");
+      nd___vo.cacheOW = $(e).css("outlineWidth");
+  
       nd___vo.alert(nd___vo.info(e));
       nd___vo.cacheE = e;
-      if($("#nd___ohighlight").attr("checked") === "checked"){
-        $(e).css("outline", "#C00 dashed 2px");
+      if($("#nd___ohighlight").attr("checked")){
+        $(e).css("outlineColor", "RGB(204,0,0)");
+        $(e).css("outlineStyle", "dashed");
+        $(e).css("outlineWidth", "2px");
+        $(e).addClass("nd___highlighted");
       }
-      if(($("#nd___oautoclean").attr("checked") === "checked")){
+      if($("#nd___oautoclean").attr("checked")){
         setTimeout("nd___vo.clean()", 2500);
       }
      }
@@ -81,7 +95,11 @@ var nd___vo = {
   },
   clean: function(){
     if(nd___vo.cacheE != null){
-      $(nd___vo.cacheE).css("outline",nd___vo.cacheB);
+      $(nd___vo.cacheE).css("outlineColor",nd___vo.cacheOC);
+      $(nd___vo.cacheE).css("outlineStyle",nd___vo.cacheOS);
+      $(nd___vo.cacheE).css("outlineWidth",nd___vo.cacheOW);
+      $(nd___vo.cacheE).removeClass("nd___highlighted");
+
     }
   },
   info: function(ele){
