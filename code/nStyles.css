@@ -9,7 +9,7 @@
   font-size: 12px;
   text-align: left;
   z-index: 9999999999999999999999;
-  width: 300px;
+  color: #000;
 }
 #nd___selector{
 width: 200px;
@@ -45,6 +45,12 @@ padding: 1px 0px;
 }
 #nd___box input[type="checkbox"] {
 margin: 3px 3px 3px 4px;
+}
+#nd___box .ui-icon {
+width: 16px;
+height: 16px;
+border-right: 1px solid #888;
+border-bottom: 1px solid #888;
 }
 #nd___box label {
 cursor: default;

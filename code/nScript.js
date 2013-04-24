@@ -16,9 +16,10 @@ var nd___vo = {
     }
   },
   add: function() {
-    $("body").append("<div id='nd___box'><span id='nd___close'>[close]</span><span id='nd___title'>CSS Selector Tester</span><form onsumbut='return false;'><p><label>Selector:</label><input type='text' id='nd___selector'> <a href='javascript: void(0);' id='nd___clean'>clear</a></p><p>Element: <span id='nd___status'>undefined</span></p><p><input type='checkbox' id='nd___ohighlight' checked='true'><label for='nd___ohighlight'>Highlight</label>&nbsp;<input type='checkbox' id='nd___oautoclean'><label for='nd___oautoclean'>Autoclean</label></p></form></div>");
+    $("body").append("<div id='nd___box'><span id='nd___close'>[X]</span><span id='nd___title'>CSS Selector Tester</span><form onsumbut='return false;'><p><label>Selector:</label><input type='text' id='nd___selector'> <a href='javascript: void(0);' id='nd___clean'>clear</a></p><p>Element: <span id='nd___status'>undefined</span></p><p><input type='checkbox' id='nd___ohighlight' checked='true'><label for='nd___ohighlight'>Highlight</label>&nbsp;<input type='checkbox' id='nd___oautoclean'><label for='nd___oautoclean'>Autoclean</label></p></form></div>");
     $("body").append("<div id='nd___cache' style='display:none;'></div>");
     $("#nd___selector").keyup(function(){nd___vo.go();});
+    $("#nd___box").draggable({ opacity: 0.35 }).resizable({ minWidth: 235 , minHeight: 120});
     $("#nd___clean").click(function(){
       nd___vo.alert("undefined"); 
       nd___vo.clean(); 
@@ -43,18 +44,29 @@ var nd___vo = {
     nd___vo.clean();
     var q, e;
     q = $.trim($("#nd___selector").val());
-    if(q === "#" || q === "."){
+    if(q === "#" || q === "." || q === "HTML" || q === "*" || q === ""){
       return false;
     }
-    e = $("*:not(div#nd___box " + q + ")" + q);
-    
+    //e = $("*:not(div#nd___box " + q + ")" + q); FAILS to get cascade.
+    try{
+      e = $(q);
+    }catch(error){
+      nd___vo.alert("Invalid selector: " + q);
+      return false;
+    }
     if(e[0]){
-      if($(e)[0].tagName.toUpperCase() === "HTML"){ e = false; return false;}
-      nd___vo.alert(nd___vo.info(e));
+      e = $.grep(e, function(domEle){
+          if($(domEle).attr("id") === "nd___box" || ($(domEle).parents("#nd___box")[0])){
+                return false;
+            }
+            return true;
+      });
+      if(e.length < 1){return false;}
       nd___vo.cacheB = $(e).css("outline");
+      nd___vo.alert(nd___vo.info(e));
       nd___vo.cacheE = e;
       if($("#nd___ohighlight").attr("checked") === "checked"){
-        $(e).css("outline","2px dashed #cc0000");
+        $(e).css("outline", "#C00 dashed 2px");
       }
       if(($("#nd___oautoclean").attr("checked") === "checked")){
         setTimeout("nd___vo.clean()", 2500);
@@ -73,6 +85,7 @@ var nd___vo = {
     }
   },
   info: function(ele){
+    if(!$(ele)[0]){return false;}
     var count = $(ele).length - 1;
     var sel = $(ele)[0].tagName;
     var id = $(ele).attr("id");

@@ -1,24 +1,19 @@
 {
-  "name": "CSS Selector Tester",
-  "version": "1.1",
-  "manifest_version": 3,
-  "description": "Test your css selector by using this quick script. Does not support the \"HTML\" Element or \"*\" selector.",
-  "browser_action": {
-    "default_icon": "icon_css_test.png"
-  },
-  "background": {
-    "scripts": ["background.js"]
-  },
-    "content_scripts": [
-    {
-      "matches": ["http://*/*","https://*/*"],
-      "css": ["nStyles.css"]
-    }
-  ],
-  "permissions": [
-    "https://*/*",
-    "http://*/*",
-    "tabs"
-  ]
+   "background": {
+      "scripts": [ "background.js" ]
+   },
+   "browser_action": {
+      "default_icon": "cst.png"
+   },
+   "content_scripts": [ {
+      "css": [ "nStyles.css", "jquery-ui-1.8.22.custom.css" ],
+      "matches": [ "http://*/*", "https://*/*" ]
+   } ],
+   "description": "Test your css selector by using this quick script. Does not support the \"HTML\" Element or \"*\" selector.",
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDGIwkCZqer4co6vvAigiv6P3srvnePB71qDA8IqwE6PgO+HGIqKMrgU2Ri21fN2t5o9CMCaN9+DMDb+K6Tr3N3oV/ramutrAtVWcRsekR0lbhpnxW3oiKMIWjQ1scQ7Qqz73vPsdPhDP5g+JSVCNtbYoeUshXGc7e86etcv0pqjQIDAQAB",
+   "manifest_version": 4,
+   "name": "CSS Selector Tester",
+   "permissions": [ "https://*/*", "http://*/*", "tabs" ],
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "1.1.7"
 }
-
