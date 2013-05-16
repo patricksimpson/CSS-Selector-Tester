@@ -7,12 +7,12 @@
    },
    "content_scripts": [ {
       "css": [ "nStyles.css", "jquery-ui-1.8.22.custom.css" ],
-      "matches": [ "http://*/*", "https://*/*" ]
+      "matches": [ "http://*/*", "https://*/*", "file://*/*", "*://*/*" ]
    } ],
    "description": "Test your css selector by using this quick script. Does not support the \"HTML\" Element or \"*\" selector.",
    "manifest_version": 2,
    "name": "CSS Selector Tester",
-   "permissions": [ "https://*/*", "http://*/*", "tabs" ],
+   "permissions": [ "https://*/*", "http://*/*", "tabs", "file://*/*", "*://*/*" ],
    "update_url": "http://clients2.google.com/service/update2/crx",
    "version": "1.1.9"
 }
