@@ -17,9 +17,9 @@ var nd___vo = {
   },
   add: function() {
     $("body").append("<div id='nd___box'></div>");
-    $("#nd___box").append("<span id='nd___close'>[X]</span><span id='nd___title'>CSS Selector Tester</span>");
+    $("#nd___box").append("<button id='nd___close'>X</button><span id='nd___title'>CSS Selector Tester</span>");
     $("#nd___box").append("<form action='#' id='nd___form'></form>");
-    $("#nd___form").append("<p><label>Selector:</label><input type='text' id='nd___selector' /> <a href='javascript: void(0);' id='nd___clean'>clear</a></p>");
+    $("#nd___form").append("<p><label>Selector: </label><input type='text' id='nd___selector' /> <a href='javascript: void(0);' id='nd___clean'>clear</a></p>");
     $("#nd___form").append("<p>Element: <span id='nd___status'>undefined</span></p>");
     $("#nd___form").append("<p><input type='checkbox' id='nd___ohighlight' checked='true' /><label for='nd___ohighlight'>Highlight</label></p>");
     $("#nd___form").on("submit", function(){ return false; });
