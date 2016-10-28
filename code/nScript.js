@@ -21,17 +21,17 @@ var nd___vo = {
     $("#nd___box").append("<form action='#' id='nd___form'></form>");
     $("#nd___form").append("<p><label>Selector:</label><input type='text' id='nd___selector' /> <a href='javascript: void(0);' id='nd___clean'>clear</a></p>");
     $("#nd___form").append("<p>Element: <span id='nd___status'>undefined</span></p>");
-    $("#nd___form").append("<p><input type='checkbox' id='nd___ohighlight' checked='true' /><label for='nd___ohighlight'>Highlight</label> <input type='checkbox' id='nd___oautoclean' /><label for='nd___oautoclean'>Autoclean</label></p>");
+    $("#nd___form").append("<p><input type='checkbox' id='nd___ohighlight' checked='true' /><label for='nd___ohighlight'>Highlight</label></p>");
     $("#nd___form").on("submit", function(){ return false; });
     $("#nd___selector").keyup(function(){nd___vo.go();});
     $("#nd___box").draggable({ opacity: 0.35 }).resizable({ minWidth: 235 , minHeight: 120});
     $("#nd___clean").click(function(){
-      nd___vo.alert("undefined"); 
-      nd___vo.clean(); 
+      nd___vo.alert("undefined");
+      nd___vo.clean();
       $("#nd___selector").val("");
     });
     $("#nd___close").click(function(){
-      nd___vo.alert("undefined"); 
+      nd___vo.alert("undefined");
       nd___vo.remove();
       $("#nd___selector").val("");
     });
@@ -73,7 +73,7 @@ var nd___vo = {
       nd___vo.cacheOC = $(e).css("outlineColor");
       nd___vo.cacheOS = $(e).css("outlineStyle");
       nd___vo.cacheOW = $(e).css("outlineWidth");
-  
+
       nd___vo.alert(nd___vo.info(e));
       nd___vo.cacheE = e;
       if($("#nd___ohighlight").attr("checked")){
@@ -81,9 +81,6 @@ var nd___vo = {
         $(e).css("outlineStyle", "dashed");
         $(e).css("outlineWidth", "2px");
         $(e).addClass("nd___highlighted");
-      }
-      if($("#nd___oautoclean").attr("checked")){
-        setTimeout("nd___vo.clean()", 2500);
       }
      }
      else{
@@ -107,7 +104,7 @@ var nd___vo = {
     var count = $(ele).length - 1;
     var sel = $(ele)[0].tagName;
     var id = $(ele).attr("id");
-    if (id) { 
+    if (id) {
       sel += "#"+ id;
     }
     var cN = $(ele).attr("class");
@@ -120,7 +117,7 @@ var nd___vo = {
     return sel;
   }
 };
-if($("#nd___box")[0]){ 
+if($("#nd___box")[0]){
   nd___vo.show();
 }else{
   nd___vo.add();
