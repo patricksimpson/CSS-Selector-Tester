@@ -8,7 +8,7 @@
   font-family: 'Helvetica Neue', Helvetica, arial !important;
   font-size: 12px !important;
   text-align: left !important;
-  z-index: 9999999999999999999999 !important;
+  z-index: 9999999999999999999999 !important; /* really, lol */
   color: #000 !important;
 }
 #nd___selector {
