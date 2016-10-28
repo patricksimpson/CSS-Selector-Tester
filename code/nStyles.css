@@ -2,7 +2,7 @@
   background-color: #eee !important;
   border: #777 1px solid !important;
   padding: 10px !important;
-  position: absolute;
+  position: fixed !important;
   top:0px;
   left: 0px;
   font-family: arial !important;
@@ -27,7 +27,7 @@ width: 200px !important;
   -webkit-margin-end: 0px !important;
   background-color: transparent !important;
 }
-#nd___box  input:not([type]), 
+#nd___box  input:not([type]),
 #nd___box input[type="color"],
 #nd___box  input[type="date"],
 #nd___box input[type="datetime"],
