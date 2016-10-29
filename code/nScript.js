@@ -19,12 +19,12 @@ var nd___vo = {
     $("body").append("<div id='nd___box'></div>");
     $("#nd___box").append("<button id='nd___close'>X</button><span id='nd___title'>CSS Selector Tester</span>");
     $("#nd___box").append("<form action='#' id='nd___form'></form>");
-    $("#nd___form").append("<p><label>Selector: </label><input type='text' id='nd___selector' /> <a href='javascript: void(0);' id='nd___clean'>clear</a></p>");
+    $("#nd___form").append("<p><label>Selector: </label><input type='text' id='nd___selector' /> <a id='nd___clean'>clear</a></p>");
     $("#nd___form").append("<p>Element: <span id='nd___status'>undefined</span></p>");
-    $("#nd___form").append("<p><input type='checkbox' id='nd___ohighlight' checked='true' /><label for='nd___ohighlight'>Highlight</label></p>");
+    $("#nd___form").append("<p class='squaredFour'><input type='checkbox' id='nd___ohighlight' checked='true' /><label for='nd___ohighlight'>Highlight</label></p>");
     $("#nd___form").on("submit", function(){ return false; });
     $("#nd___selector").keyup(function(){nd___vo.go();});
-    $("#nd___box").draggable({ opacity: 0.35 }).resizable({ minWidth: 235 , minHeight: 120});
+    $("#nd___box").draggable({ opacity: 0.35 }).resizable({ minWidth: 305 , minHeight: 155 });
     $("#nd___clean").click(function(){
       nd___vo.alert("undefined");
       nd___vo.clean();
