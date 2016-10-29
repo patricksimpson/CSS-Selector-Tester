@@ -16,14 +16,24 @@
   font-size: 12px !important;
   text-align: left !important;
   z-index: 9999999999999999999999 !important; /* really, lol */
-  color: #000 !important;
+  color: #222 !important;
 	width: 305px;
 	height: 155px;
-	text-shadow: 1px 1px #fff
+	text-shadow: 1px 1px #fff;
+	line-height: 16px !important;
 }
 #nd___selector {
-  width: 200px !important;
+  width: 90% !important;
+	padding: 4px !important;
+	font-size: 1em;
+	color: #333;
 }
+
+
+#nd___selector::-webkit-input-placeholder {
+   color: #aaa;
+}
+
 #nd___box form {
   display: block !important;
   margin-top: 0em !important;
@@ -37,6 +47,7 @@
 #nd___box a:hover {
 	color: #425ff4;
 	text-decoration: underline;
+	cursor: pointer;
 }
 
 #nd___box p {
@@ -61,71 +72,85 @@
 #nd___box input[type="text"],
 #nd___box input[type="time"],
 #nd___box input[type="url"],
-#nd___box input[type="week"] {
+#nd___box input[type="week"],
+#nd___box input[type="checkbox"]
+ {
   padding: 0 4px;
   border: 1px solid #cecece;
 	background-color: white;
 }
-	/* .squaredFour */
-	#nd___box .squaredFour {
-	  width: 20px;
-	  position: relative;
-	  margin: 20px auto;
-	}
-	#nd___box .squaredFour label {
-	  width: 20px;
-	  height: 20px;
-	  cursor: pointer;
-	  position: absolute;
-	  top: 0;
-	  left: 0;
-	  background: #fcfff4;
-	  background: -webkit-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
-	  background: linear-gradient(to bottom, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
-	  border-radius: 4px;
-	  box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
-    line-height: 1.75em;
-    text-indent: 2.25em;
-	}
-	#nd___box .squaredFour label:after {
-	  content: '';
-	  width: 9px;
-	  height: 5px;
-	  position: absolute;
-	  top: 4px;
-	  left: 4px;
-	  border: 3px solid #333;
-	  border-top: none;
-	  border-right: none;
-	  background: transparent;
-	  opacity: 0;
-	  -webkit-transform: rotate(-45deg);
-	          transform: rotate(-45deg);
-	}
-	#nd___box .squaredFour label:hover::after {
-	  opacity: 0.5;
-	}
-	#nd___box .squaredFour input[type=checkbox] {
-	  visibility: hidden;
-	}
-	#nd___box .squaredFour input[type=checkbox]:checked + label:after {
-	  opacity: 1;
-	}
-/* end .squaredFour */
 
+#nd___box input[type="checkbox"]{
+	float: left;
+	width: 16px;
+	height: 16px;
+	margin: 0;
+	opacity: 0;
+	position: relative;
+	z-index: 5;
+}
+#nd___box input[type="checkbox"]+label{
+	margin: 0 0 0 20px;
+  display: block;
+	padding: 0;
+	z-index: 1;
+	position: relative;
+	font-size: 12px;
+	padding: 2px;
+	text-indent: -0.5em;
+}
+#nd___box input[type="checkbox"]+label:before{
+	content: '';
+	position: absolute;
+	top: 1px;
+	left: -20px;
+	width: 14px;
+	height: 14px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	background-color: rgba(0,0,0,0);
+	-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.14);
+	-moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.14);
+	box-shadow: inset 0 1px 2px rgba(0,0,0,.14);
+	border: solid 1px #bbb;
+}
+#nd___box input[type="checkbox"]+label:after{
+	content: '';
+	position: absolute;
+	top: 4px;
+	left: -17px;
+	width: 10px;
+	height: 10px;
+	background: #7dc093;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	opacity: 0;
+	-webkit-transition: all 200ms linear;
+	-moz-transition: all 200ms linear;
+	-ms-transition: all 200ms linear;
+	-o-transition: all 200ms linear;
+	transition: all 200ms linear;
+}
+#nd___box input[type="checkbox"]:checked+label:after{opacity: 1;}
 
 
 #nd___highlighted {
   outline-color: #CC0000 !important;
   outline-width: 2px !important;
   outline-style: dashed !important;
+	
 }
+
 #nd___box input[type="checkbox"] {
   margin: 3px 3px 3px 6px !important;
 }
+
 #nd___box input[type="checkbox"]:first-of-type {
   margin-left: 0 !important;
 }
+
 #nd___box .ui-icon {
   width: 16px;
   height: 16px;
