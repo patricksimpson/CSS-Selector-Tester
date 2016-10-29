@@ -1,4 +1,11 @@
 #nd___box {
+  all: unset;
+}
+#nd___box * {
+  all: unset;
+}
+
+#nd___box {
   background-color: #eee !important;
   border: #9e9e9e 1px solid !important;
   padding: 10px !important;
@@ -10,6 +17,9 @@
   text-align: left !important;
   z-index: 9999999999999999999999 !important;
   color: #000 !important;
+	width: 305px;
+	height: 155px;
+	text-shadow: 1px 1px #fff
 }
 #nd___selector {
   width: 200px !important;
@@ -19,6 +29,16 @@
   margin-top: 0em !important;
   background-color: transparent !important;
 }
+#nd___box a {
+	color: #4286f4;
+	text-decoration: none;
+}
+
+#nd___box a:hover {
+	color: #425ff4;
+	text-decoration: underline;
+}
+
 #nd___box p {
   display: block !important;
   -webkit-margin-before: 1em !important;
@@ -27,6 +47,7 @@
   -webkit-margin-end: 0px !important;
   background-color: transparent !important;
 }
+
 #nd___box  input:not([type]),
 #nd___box input[type="color"],
 #nd___box  input[type="date"],
@@ -43,7 +64,57 @@
 #nd___box input[type="week"] {
   padding: 0 4px;
   border: 1px solid #cecece;
+	background-color: white;
 }
+	/* .squaredFour */
+	#nd___box .squaredFour {
+	  width: 20px;
+	  position: relative;
+	  margin: 20px auto;
+	}
+	#nd___box .squaredFour label {
+	  width: 20px;
+	  height: 20px;
+	  cursor: pointer;
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  background: #fcfff4;
+	  background: -webkit-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+	  background: linear-gradient(to bottom, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+	  border-radius: 4px;
+	  box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
+    line-height: 1.75em;
+    text-indent: 2.25em;
+	}
+	#nd___box .squaredFour label:after {
+	  content: '';
+	  width: 9px;
+	  height: 5px;
+	  position: absolute;
+	  top: 4px;
+	  left: 4px;
+	  border: 3px solid #333;
+	  border-top: none;
+	  border-right: none;
+	  background: transparent;
+	  opacity: 0;
+	  -webkit-transform: rotate(-45deg);
+	          transform: rotate(-45deg);
+	}
+	#nd___box .squaredFour label:hover::after {
+	  opacity: 0.5;
+	}
+	#nd___box .squaredFour input[type=checkbox] {
+	  visibility: hidden;
+	}
+	#nd___box .squaredFour input[type=checkbox]:checked + label:after {
+	  opacity: 1;
+	}
+/* end .squaredFour */
+
+
+
 #nd___highlighted {
   outline-color: #CC0000 !important;
   outline-width: 2px !important;
@@ -60,6 +131,12 @@
   height: 16px;
   border-right: 1px solid #888;
   border-bottom: 1px solid #888;
+  cursor: se-resize;
+  width: 12px;
+  height: 12px;
+  right: 1px;
+  bottom: 1px;
+	position: absolute;
 }
 #nd___box label {
   cursor: default;
@@ -71,12 +148,17 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  width: 12px;
-  height: 12px;
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	background-color: transparent;
+	border: 0 none;
   text-indent: -9999px;
+	cursor: pointer;
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAAAVlpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDUuNC4wIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6dGlmZj0iaHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iPgogICAgICAgICA8dGlmZjpPcmllbnRhdGlvbj4xPC90aWZmOk9yaWVudGF0aW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KTMInWQAAALBJREFUKBWNkdENwjAMRA3dizXYpP+ULxBsxC8SI7BJ/4B7jl05FUJYOvliX+JLMpjZTtgLd4EYhLezno/RMwiCU4hI20CWziJo0HogpnBpS9soA4La+sCukZsoXkNca+7ZdxTBURzUqWi4nwee00IKEU+t7T00frmofU15SNdcxqianpmSk6r/ql1eowrg63v4tHznFP981n8+Lv9pxBN4Cgef1dYvcazQI9+EWXh8AHBNLrw6Br3RAAAAAElFTkSuQmCC');
 }
 #nd___title{
   font-weight: bold !important;
   font-size: 1.1em !important;
+	text-shadow: 0 1px 0 #ffffff;
 }
