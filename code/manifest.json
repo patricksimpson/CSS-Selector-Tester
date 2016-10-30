@@ -14,5 +14,5 @@
    "name": "CSS Selector Tester",
    "permissions": [ "\u003Call_urls\u003E", "tabs"],
    "update_url": "http://clients2.google.com/service/update2/crx",
-   "version": "1.3.1"
+   "version": "1.3.2"
 }
