@@ -79,7 +79,7 @@ var nd___vo = {
 
       nd___vo.alert(nd___vo.info(e));
       nd___vo.cacheE = e;
-      if($("#nd___ohighlight").checked){
+      if($("#nd___ohighlight")[0].checked){
         $(e).css("outlineColor", "RGB(204,0,0)");
         $(e).css("outlineStyle", "dashed");
         $(e).css("outlineWidth", "2px");
