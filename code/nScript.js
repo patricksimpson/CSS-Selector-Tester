@@ -118,6 +118,15 @@ var nd___vo = {
       sel += ", " + count + " others...";
     }
     return sel;
+  },
+  keyboard: document.onkeydown=function(event){
+      var e = event || window.event || arguments.callee.caller.arguments[0];
+      if(e && e.keyCode==27){ // Esc
+        $("#nd___close").click();
+      }
+      if(e && e.keyCode==13){ // enter
+         //todo
+      }
   }
 };
 if($("#nd___box")[0]){
